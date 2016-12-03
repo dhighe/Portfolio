@@ -100,15 +100,15 @@ h2 {
   padding-bottom: 10px;
 }
 
-#background-test {
+#background-fade {
   position: absolute;
-  background: black;
+  background: dimgrey;
   width: 100vw;
   height: 100vh;
   z-index: 2;
 }
 
-#background-test.active {
+#background-fade.active {
   -webkit-animation-name: fadeOut;
   animation-name: fadeOut;
   -webkit-animation-duration: 1s;

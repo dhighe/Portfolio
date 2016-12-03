@@ -5,7 +5,7 @@ $(document).ready(function($) {
   $('#project-container').hide();
   $('#contact-container').hide();
   setTimeout(function(){
-    $('#background-test').toggleClass('active');
+    $('#background-fade').toggleClass('active');
   },100);
 });
 
