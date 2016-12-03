@@ -11,8 +11,8 @@
   </head>
   <body>
     <div id="background-test">
-
     </div>
+
     <div id="page-container">
 
       <div id="header-container" class="show">
@@ -55,6 +55,18 @@
       </div>
       <div id="contact-container" class="hide">
         <div id="contact">
+          <form method="post" name="contact_form" action="email-form.php">
+              Your Name:
+              <input type="text" name="name">
+
+              Your Email Address:
+              <input type="text" name="email">
+
+              Message:
+              <textarea name="message"></textarea>
+
+              <input type="submit" value="Submit">
+          </form>
           <a href="https://github.com/dhighe">
             <img id="github" src="./images/github-sign.png" alt="">
           </a>

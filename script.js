@@ -21,25 +21,110 @@ const contactButton = $('#contact-btn');
 
   homeButton.on('click', function(){
     console.log("Main Button was clicked");
-    header.toggleClass('hide show');
+    if (aboutMe.hasClass('show')) {
+      aboutMe.toggleClass('hide show');
+      setTimeout(function(){
+        header.toggleClass('hide show');
+      },1000);
+    } else if (project.hasClass('show')) {
+      project.toggleClass('hide show');
+      setTimeout(function(){
+        header.toggleClass('hide show');
+      },1000);
+    } else if (contact.hasClass('show')) {
+      contact.toggleClass('hide show');
+      setTimeout(function(){
+        header.toggleClass('hide show');
+      },1000);
+    } else {
+      header.toggleClass('hide show');
+      setTimeout(function(){
+        header.toggleClass('hide show');
+      },1000);
+    }
   });
 
   aboutButton.on('click', function(){
-    aboutMe.show();
     console.log("About Button was clicked")
-    aboutMe.toggleClass('hide show');
-
+    if (header.hasClass('show')) {
+      header.toggleClass('hide show');
+      setTimeout(function(){
+        aboutMe.show();
+        aboutMe.toggleClass('hide show');
+      },1000);
+    } else if (project.hasClass('show')) {
+      project.toggleClass('hide show');
+      setTimeout(function(){
+        aboutMe.show();
+        aboutMe.toggleClass('hide show');
+      },1000);
+    } else if (contact.hasClass('show')) {
+      contact.toggleClass('hide show');
+      setTimeout(function(){
+        aboutMe.show();
+        aboutMe.toggleClass('hide show');
+      },1000);
+    } else {
+      aboutMe.toggleClass('hide show');
+      setTimeout(function(){
+        aboutMe.toggleClass('hide show');
+      },1000);
+    }
   });
 
   projectButton.on('click', function(){
-    project.show();
     console.log("Project Button was clicked")
-    project.toggleClass('hide show');
+    if (header.hasClass('show')) {
+      header.toggleClass('hide show');
+      setTimeout(function(){
+        project.show();
+        project.toggleClass('hide show');
+      },1000);
+    } else if (aboutMe.hasClass('show')) {
+      aboutMe.toggleClass('hide show');
+      setTimeout(function(){
+        project.show();
+        project.toggleClass('hide show');
+      },1000);
+    } else if (contact.hasClass('show')) {
+      contact.toggleClass('hide show');
+      setTimeout(function(){
+        project.show();
+        project.toggleClass('hide show');
+      },1000);
+    } else {
+      project.toggleClass('hide show');
+      setTimeout(function(){
+        project.toggleClass('hide show');
+      },1000);
+    }
   });
 
   contactButton.on('click', function(){
-    contact.show();
     console.log("Contact Button was clicked")
-    contact.toggleClass('hide show');
+    if (header.hasClass('show')) {
+      header.toggleClass('hide show');
+      setTimeout(function(){
+        contact.show();
+        contact.toggleClass('hide show');
+      },1000);
+    } else if (aboutMe.hasClass('show')) {
+      aboutMe.toggleClass('hide show');
+      setTimeout(function(){
+        contact.show();
+        contact.toggleClass('hide show');
+      },1000);
+    } else if (project.hasClass('show')) {
+      project.toggleClass('hide show');
+      setTimeout(function(){
+        contact.show();
+        contact.toggleClass('hide show');
+      },1000);
+    } else {
+      contact.toggleClass('hide show');
+      setTimeout(function(){
+        contact.toggleClass('hide show');
+      },1000);
+    }
   });
 });
