@@ -5,8 +5,13 @@ $(document).ready(function($) {
   $('#project-container').hide();
   $('#contact-container').hide();
   setTimeout(function(){
-    $('#background-test').toggleClass('active');
-  },100);
+    $('#background-fade').toggleClass('active');
+  },200);
+
+  var frmvalidator  = new Validator("contact_form");
+  frmvalidator.addValidation("name","req","Please provide your name");
+  frmvalidator.addValidation("email","req","Please provide your email");
+  frmvalidator.addValidation("email","email","Please enter a valid email address");
 });
 
 $(function() {
