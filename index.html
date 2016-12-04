@@ -16,8 +16,10 @@
     <div id="background-fade">
     </div>
 
-    <div id="page-container">
+    <div id="modal-shadow">
+    </div>
 
+    <div id="page-container">
       <div id="header-container" class="show">
         <div id="heading">
         <h1>donald highe</h1>
@@ -32,27 +34,84 @@
       </div>
       <div id="project-container" class="hide">
         <div id="projects">
-          <div>
+          <div id="game-project">
             <h2>project #1</h2>
-            <a href="https://dhighe.github.io/Project-1-Game/">
-              <img src="./images/impossible-game.png" alt="">
-            </a>
+            <!-- <a href="https://dhighe.github.io/Project-1-Game/"> -->
+              <img src="./images/game-start.png" alt="">
+            <!-- </a> -->
           </div>
-          <div>
+          <div id="comic-project">
             <h2>project #2</h2>
-            <a href="https://project2-marvel-comics.herokuapp.com/profile">
-              <img src="./images/marvel-movies-to-comics.png" alt="">
-            </a>
+            <!-- <a href="https://project2-marvel-comics.herokuapp.com/profile"> -->
+              <img src="./images/comic-marvel-movies-to-comics.png" alt="">
+            <!-- </a> -->
           </div>
-          <div>
+          <div id="playlist-project">
             <h2>project #3</h2>
-            <a href="https://nstd--playlist.herokuapp.com/">
-              <img src="./images/NSTD-playlist.png" alt="">
-            </a>
+            <!-- <a href="https://nstd--playlist.herokuapp.com/"> -->
+              <img src="./images/playlist-search.png" alt="">
+            <!-- </a> -->
           </div>
-          <div>
+          <div id="fourth-project">
             <h2>project #4</h2>
-            <img src="http://www.pacinno.eu/wp-content/uploads/2014/05/placeholder-Copy-3.png" alt="">
+            <img src="./images/placeholder.png" alt="">
+          </div>
+       </div>
+       <div id="project-modals">
+          <div id="game-modal" class="hide">
+            <div>
+              <h3>possible game</h3>
+              <p>inspired by the xbox live arcarde game: impossible game</p>
+              <p>attempt to make it through the stage, by jumping over the obstacles</p>
+              <p>built with: jQuery for dom manipulation and collision detection </p>
+              <a href="https://dhighe.github.io/Project-1-Game/">launch</a>
+            </div>
+            <div>
+              <img src="./images/game-landing-page.png" alt="">
+              <img src="./images/game-congratulations.png" alt="">
+            </div>
+            <div id="firstClose">
+              x
+            </div>
+          </div>
+          <div id="comic-modal" class="hide">
+            <div>
+              <h3>movie to comics</h3>
+              <p>search for the comics that inspired the movies</p>
+              <p>save comics and write notes about each one.</p>
+              <p>built with: node, express, and mongodb</p>
+              <p>feel free to try it out: </br> username: test </br> password: test</p>
+              <a href="https://dhighe.github.io/Project-1-Game/">launch</a>
+            </div>
+            <div>
+              <img src="./images/comic-login.png" alt="">
+              <img src="./images/comic-profile.png" alt="">
+            </div>
+            <div id="secondClose">
+              x
+            </div>
+          </div>
+          <div id="playlist-modal" class="hide">
+            <div>
+              <h3>nstd playlist</h3>
+              <p>search songs by artist and albums then watch the music video</p>
+              <p>save your favorite songs and chat with other on the site as well</p>
+              <p>built with: react and sql</p>
+              <a href="https://dhighe.github.io/Project-1-Game/">launch</a>
+            </div>
+            <div>
+              <img src="./images/playlist-playlist.png" alt="">
+              <img src="./images/playlist-music-video.png" alt="">
+            </div>
+            <div id="thirdClose">
+              x
+            </div>
+          </div>
+          <div id="fourth-modal" class="hide">
+            <img src="./images/under-construction.jpg" alt="" id="working">
+            <div id="fourthClose">
+              x
+            </div>
           </div>
        </div>
       </div>
@@ -66,7 +125,7 @@
               <input type="text" name="email"></br>
 
               message:</br>
-              <textarea name="message"></textarea></br>
+              <textarea name="message" style="font-family:Maven Pro"></textarea></br>
               <input id="submit" type="submit" value="submit"></br>
           </form>
         </div>

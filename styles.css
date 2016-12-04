@@ -19,6 +19,7 @@ body {
   justify-content: center;
   align-items: center;
   overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 img {
@@ -63,6 +64,10 @@ input {
   margin-bottom: 20px;
 }
 
+input[type="text"] {
+  font-family: 'Maven Pro', sans-serif;
+}
+
 textarea {
   width: 500px;
   height: 200px;
@@ -83,7 +88,6 @@ textarea {
   border: none;
   outline: none;
   margin-right: -7px;
-
 }
 
 #background-fade {
@@ -92,6 +96,14 @@ textarea {
   width: 100vw;
   height: 100vh;
   z-index: 2;
+}
+
+#modal-shadow {
+  position: absolute;
+  opacity: 0.5;
+  background: rgb(1,1,1);
+  width: 100vw;
+  height: 100vh;
 }
 
 #button {
@@ -132,7 +144,7 @@ textarea {
   position: absolute;
   left: 0;
   bottom: 0;
-  padding: 40px
+  margin: 40px
 }
 
 #github {
@@ -141,7 +153,7 @@ textarea {
   position: absolute;
   right: 0;
   bottom: 0;
-  padding: 40px;
+  margin: 40px;
 }
 
 #projects {
@@ -169,6 +181,10 @@ textarea {
 
 #project-container {
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }
 
 #contact-container {
@@ -180,6 +196,114 @@ textarea {
   bottom: 0;
   padding-bottom: 40px;
 }
+
+#project-modals {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#game-modal {
+  background-color: #F5F5F5;
+  /*background-color: green;*/
+  width: 52vw;
+  height: 52vh;
+  position: absolute;
+}
+
+#comic-modal {
+  background-color: #F5F5F5;
+  width: 52vw;
+  height: 52vh;
+  position: absolute;
+}
+
+#playlist-modal {
+  background-color: #F5F5F5;
+  width: 52vw;
+  height: 52vh;
+  position: absolute;
+}
+
+#working {
+  width: 40vw;
+  height: 40vh;
+}
+
+#fourth-modal {
+  background-color: #F5F5F5;
+  width: 52vw;
+  height: 52vh;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#firstClose {
+  position: absolute;
+  font-size: 18px;
+  top: 0;
+  right: 0;
+  margin: 5px;
+  padding: 2px;
+}
+
+#secondClose {
+  position: absolute;
+  font-size: 18px;
+  top: 0;
+  right: 0;
+  margin: 5px;
+  padding: 2px;
+}
+
+#thirdClose {
+  position: absolute;
+  font-size: 18px;
+  top: 0;
+  right: 0;
+  margin: 5px;
+  padding: 2px;
+}
+
+#fourthClose {
+  position: absolute;
+  font-size: 18px;
+  top: 0;
+  right: 0;
+  margin: 5px;
+  padding-right: 3px;
+  padding-left: 3px;
+}
+
+#firstClose:hover {
+  background-color: rgb(169,169,169);
+  color: #F5F5F5;
+  cursor: default;
+}
+
+#secondClose:hover {
+  background-color: rgb(169,169,169);
+  color: #F5F5F5;
+  cursor: default;
+}
+
+#thirdClose:hover {
+  background-color: rgb(169,169,169);
+  color: #F5F5F5;
+  cursor: default;
+}
+
+#fourthClose:hover {
+  background-color: rgb(169,169,169);
+  color: #F5F5F5;
+  cursor: default;
+}
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~ Animations ~~~~~~~~~~~~~~~~~~~~~~*/
 
 #background-fade.active {
   -webkit-animation-name: fadeOut;
@@ -198,6 +322,274 @@ textarea {
   0% {opacity: 1;}
   100% {opacity: 0;}
   }
+
+#game-modal.show {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  /*z-index: 2;*/
+  }
+  @-webkit-keyframes zoomIn {
+  0% {
+  opacity: 0;
+  -webkit-transform: scale3d(.3, .3, .3);
+  transform: scale3d(.3, .3, .3);
+  }
+  50% {
+  opacity: 1;
+  }
+  }
+  @keyframes zoomIn {
+  0% {
+  opacity: 0;
+  -webkit-transform: scale3d(.3, .3, .3);
+  transform: scale3d(.3, .3, .3);
+  }
+  50% {
+  opacity: 1;
+  }
+}
+
+#game-modal.hide {
+  -webkit-animation-name: zoomOut;
+  animation-name: zoomOut;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  z-index: -1;
+  }
+  @-webkit-keyframes zoomOut {
+  0% {
+  opacity: 1;
+  }
+
+  50% {
+  opacity: 0;
+  -webkit-transform: scale3d(.3, .3, .3);
+  transform: scale3d(.3, .3, .3);
+  }
+  100% {
+  opacity: 0;
+  }
+  }
+  @keyframes zoomOut {
+  0% {
+  opacity: 1;
+  }
+  50% {
+  opacity: 0;
+  -webkit-transform: scale3d(.3, .3, .3);
+  transform: scale3d(.3, .3, .3);
+  }
+  100% {
+  opacity: 0;
+  }
+}
+
+#comic-modal.show {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  /*z-index: 2;*/
+  }
+  @-webkit-keyframes zoomIn {
+  0% {
+  opacity: 0;
+  -webkit-transform: scale3d(.3, .3, .3);
+  transform: scale3d(.3, .3, .3);
+  }
+  50% {
+  opacity: 1;
+  }
+  }
+  @keyframes zoomIn {
+  0% {
+  opacity: 0;
+  -webkit-transform: scale3d(.3, .3, .3);
+  transform: scale3d(.3, .3, .3);
+  }
+  50% {
+  opacity: 1;
+  }
+}
+
+#comic-modal.hide {
+  -webkit-animation-name: zoomOut;
+  animation-name: zoomOut;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  z-index: -1;
+  }
+  @-webkit-keyframes zoomOut {
+  0% {
+  opacity: 1;
+  }
+
+  50% {
+  opacity: 0;
+  -webkit-transform: scale3d(.3, .3, .3);
+  transform: scale3d(.3, .3, .3);
+  }
+  100% {
+  opacity: 0;
+  }
+  }
+  @keyframes zoomOut {
+  0% {
+  opacity: 1;
+  }
+  50% {
+  opacity: 0;
+  -webkit-transform: scale3d(.3, .3, .3);
+  transform: scale3d(.3, .3, .3);
+  }
+  100% {
+  opacity: 0;
+  }
+}
+
+#playlist-modal.show {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  /*z-index: 2;*/
+  }
+  @-webkit-keyframes zoomIn {
+  0% {
+  opacity: 0;
+  -webkit-transform: scale3d(.3, .3, .3);
+  transform: scale3d(.3, .3, .3);
+  }
+  50% {
+  opacity: 1;
+  }
+  }
+  @keyframes zoomIn {
+  0% {
+  opacity: 0;
+  -webkit-transform: scale3d(.3, .3, .3);
+  transform: scale3d(.3, .3, .3);
+  }
+  50% {
+  opacity: 1;
+  }
+}
+
+#playlist-modal.hide {
+  -webkit-animation-name: zoomOut;
+  animation-name: zoomOut;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  z-index: -1;
+  }
+  @-webkit-keyframes zoomOut {
+  0% {
+  opacity: 1;
+  }
+
+  50% {
+  opacity: 0;
+  -webkit-transform: scale3d(.3, .3, .3);
+  transform: scale3d(.3, .3, .3);
+  }
+  100% {
+  opacity: 0;
+  }
+  }
+  @keyframes zoomOut {
+  0% {
+  opacity: 1;
+  }
+  50% {
+  opacity: 0;
+  -webkit-transform: scale3d(.3, .3, .3);
+  transform: scale3d(.3, .3, .3);
+  }
+  100% {
+  opacity: 0;
+  }
+}
+
+#fourth-modal.show {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  /*z-index: 2;*/
+  }
+  @-webkit-keyframes zoomIn {
+  0% {
+  opacity: 0;
+  -webkit-transform: scale3d(.3, .3, .3);
+  transform: scale3d(.3, .3, .3);
+  }
+  50% {
+  opacity: 1;
+  }
+  }
+  @keyframes zoomIn {
+  0% {
+  opacity: 0;
+  -webkit-transform: scale3d(.3, .3, .3);
+  transform: scale3d(.3, .3, .3);
+  }
+  50% {
+  opacity: 1;
+  }
+}
+
+#fourth-modal.hide {
+  -webkit-animation-name: zoomOut;
+  animation-name: zoomOut;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  z-index: -1;
+  }
+  @-webkit-keyframes zoomOut {
+  0% {
+  opacity: 1;
+  }
+
+  50% {
+  opacity: 0;
+  -webkit-transform: scale3d(.3, .3, .3);
+  transform: scale3d(.3, .3, .3);
+  }
+  100% {
+  opacity: 0;
+  }
+  }
+  @keyframes zoomOut {
+  0% {
+  opacity: 1;
+  }
+  50% {
+  opacity: 0;
+  -webkit-transform: scale3d(.3, .3, .3);
+  transform: scale3d(.3, .3, .3);
+  }
+  100% {
+  opacity: 0;
+  }
+}
 
 #header-container.hide {
   -webkit-animation-name: fadeOutDown;
