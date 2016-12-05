@@ -55,10 +55,15 @@ h1 {
 
 h2 {
   font-size: 16px;
+  color: rgb(169,169,169);
 }
 
 h3 {
   font-size: 20px;
+}
+
+h4 {
+  font-size: 16px;
 }
 
 input {
@@ -179,10 +184,16 @@ textarea {
 #projects {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  width: 50vw;
+  width: 100vw;
+  margin-bottom: 100px;
+}
+
+#comic-project {
+  margin-left: -250px;
+  margin-right: -250px;
 }
 
 #page-container {
