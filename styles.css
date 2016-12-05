@@ -57,6 +57,10 @@ h2 {
   font-size: 16px;
 }
 
+h3 {
+  font-size: 20px;
+}
+
 input {
   width: 250px;
   height: 20px;
@@ -112,8 +116,25 @@ textarea {
   flex-direction: row;
   align-content: center;
   background: none;
-
 }
+
+#launch-btn {
+  font-family: 'Maven Pro', sans-serif;
+  padding: none;
+  height: 30px;
+  width: 150px;
+  font-size: 16px;
+  background: none;
+  border: none;
+  outline: none;
+  margin-right: -7px;
+}
+#launch-btn:hover {
+  background-color: rgb(169,169,169);
+  color: #F5F5F5;
+  cursor: default;
+}
+
 
 #about-me {
   display: flex;
@@ -210,6 +231,10 @@ textarea {
   width: 52vw;
   height: 52vh;
   position: absolute;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
 }
 
 #comic-modal {
@@ -217,6 +242,10 @@ textarea {
   width: 52vw;
   height: 52vh;
   position: absolute;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
 }
 
 #playlist-modal {
@@ -224,6 +253,25 @@ textarea {
   width: 52vw;
   height: 52vh;
   position: absolute;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+}
+
+#description {
+  width: 45%;
+}
+
+#screenshots {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+#project-screens {
+  margin: 5px;
 }
 
 #working {
@@ -247,7 +295,7 @@ textarea {
   top: 0;
   right: 0;
   margin: 5px;
-  padding: 2px;
+  padding: 3px;
 }
 
 #secondClose {
@@ -256,7 +304,7 @@ textarea {
   top: 0;
   right: 0;
   margin: 5px;
-  padding: 2px;
+  padding: 3px;
 }
 
 #thirdClose {
@@ -265,7 +313,7 @@ textarea {
   top: 0;
   right: 0;
   margin: 5px;
-  padding: 2px;
+  padding: 3px;
 }
 
 #fourthClose {
@@ -274,8 +322,7 @@ textarea {
   top: 0;
   right: 0;
   margin: 5px;
-  padding-right: 3px;
-  padding-left: 3px;
+  padding: 3px;
 }
 
 #firstClose:hover {
@@ -654,7 +701,6 @@ textarea {
   }
 }
 
-
 #about-container.hide {
   -webkit-animation-name: fadeOutDown;
   animation-name: fadeOutDown;
@@ -847,6 +893,3 @@ textarea {
 @media-query{
 
 }
-
-
-
