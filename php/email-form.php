@@ -1,33 +1,71 @@
 <?php
-  $errors = '';
-  $myemail = 'dhighe25@gmail.com';//<-----Put Your email address here.
-  if(empty($_POST['name'])  ||
-     empty($_POST['email']) ||
-     empty($_POST['message']))
-  {
-      $errors .= "\n error: all fields are required";
-  }
-    $name = $_POST['name'];
-    $email_address = $_POST['email'];
-    $message = $_POST['message'];
-    if (!preg_match(
-    "/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/i",
-    $email_address))
-  {
-    $errors .= "\n error: invalid email address";
-  }
 
-  if( empty($errors))
-  {
-    $to = $myemail;
-    $email_subject = "contact form submission: $name";
-    $email_body = "you have received a new message. ".
-    " here are the details:\n Name: $name \n ".
-    "email: $email_address\n Message \n $message";
-    $headers = "from: $myemail\n";
-    $headers .= "reply-To: $email_address";
-    mail($to,$email_subject,$email_body,$headers);
-    //redirect to the 'thank you' page
-    header('location: submission.html');
-  }
+/* Set e-mail recipient */
+$myemail  = "dhighe25@gmail.com";
+
+/* Check all form inputs using check_input function */
+$yourname = check_input($_POST['yourname'], "Enter your name");
+$email    = check_input($_POST['email']);
+$message = check_input($_POST['message'], "Write your message");
+
+/* If e-mail is not valid show error message */
+if (!preg_match("/([\w\-]+\@[\w\-]+\.[\w\-]+)/", $email))
+{
+    show_error("E-mail address not valid");
+}
+
+/* If URL is not valid set $website to empty */
+if (!preg_match("/^(https?:\/\/+[\w\-]+\.[\w\-]+)/i", $website))
+{
+    $website = '';
+}
+
+/* Let's prepare the message for the e-mail */
+$message = "Hello!
+
+Your contact form has been submitted by:
+
+Name: $yourname
+E-mail: $email
+
+Message:
+$message
+
+End of message
+";
+
+/* Send the message using mail() function */
+mail($myemail, $message);
+
+/* Redirect visitor to the thank you page */
+header('Location: submission.html');
+exit();
+
+/* Functions we used */
+function check_input($data, $problem='')
+{
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    if ($problem && strlen($data) == 0)
+    {
+        show_error($problem);
+    }
+    return $data;
+}
+
+function show_error($myError)
+{
+?>
+    <html>
+    <body>
+
+    <b>Please correct the following error:</b><br />
+    <?php echo $myError; ?>
+
+    </body>
+    </html>
+<?php
+exit();
+}
 ?>
