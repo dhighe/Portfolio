@@ -360,6 +360,13 @@ textarea {
   cursor: default;
 }
 
+button:disabled,
+button[disabled]{
+  background-color: rgb(169,169,169);
+  color: #F5F5F5;
+  cursor: default;
+}
+
 
 /*~~~~~~~~~~~~~~~~~~~~~~ Animations ~~~~~~~~~~~~~~~~~~~~~~*/
 

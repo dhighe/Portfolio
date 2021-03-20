@@ -41,27 +41,33 @@ const firstClose = $('#firstClose');
 const secondClose = $('#secondClose');
 const thirdClose = $('#thirdClose');
 const fourthClose = $('#fourthClose');
+homeButton.prop("disabled", true);
 
 
   homeButton.on('click', () => {
-    console.log("Main Button was clicked");
+     console.log("Main Button was clicked");
+     homeButton.prop("disabled", true);
     if (aboutMe.hasClass('show')) {
       aboutMe.toggleClass('hide show');
+      aboutButton.prop("disabled", false);
       setTimeout(() => {
         header.toggleClass('hide show');
       },1000);
     } else if (project.hasClass('show')) {
       project.toggleClass('hide show');
+      projectButton.prop("disabled", false);
       setTimeout(() => {
         header.toggleClass('hide show');
       },1000);
     } else if (contact.hasClass('show')) {
       contact.toggleClass('hide show');
+      contactButton.prop("disabled", false);
       setTimeout(() => {
         header.toggleClass('hide show');
       },1000);
     } else {
       header.toggleClass('hide show');
+      homeButton.prop("disabled", false);
       setTimeout(() => {
         header.toggleClass('hide show');
       },1000);
@@ -70,26 +76,31 @@ const fourthClose = $('#fourthClose');
 
   aboutButton.on('click', () => {
     console.log("About Button was clicked")
+    aboutButton.prop("disabled", true);
     if (header.hasClass('show')) {
       header.toggleClass('hide show');
+      homeButton.prop("disabled", false);
       setTimeout(() => {
         aboutMe.show();
         aboutMe.toggleClass('hide show');
       },1000);
     } else if (project.hasClass('show')) {
       project.toggleClass('hide show');
+      projectButton.prop("disabled", false);
       setTimeout(() => {
         aboutMe.show();
         aboutMe.toggleClass('hide show');
       },1000);
     } else if (contact.hasClass('show')) {
       contact.toggleClass('hide show');
+      contactButton.prop("disabled", false);
       setTimeout(() => {
         aboutMe.show();
         aboutMe.toggleClass('hide show');
       },1000);
     } else {
       aboutMe.toggleClass('hide show');
+      aboutButton.prop("disabled", false);
       setTimeout(() => {
         aboutMe.toggleClass('hide show');
       },1000);
@@ -98,26 +109,31 @@ const fourthClose = $('#fourthClose');
 
   projectButton.on('click', () => {
     console.log("Project Button was clicked")
+    projectButton.prop("disabled", true);
     if (header.hasClass('show')) {
       header.toggleClass('hide show');
+      homeButton.prop("disabled", false);
       setTimeout(() => {
         project.show();
         project.toggleClass('hide show');
       },1000);
     } else if (aboutMe.hasClass('show')) {
       aboutMe.toggleClass('hide show');
+      aboutButton.prop("disabled", false);
       setTimeout(() => {
         project.show();
         project.toggleClass('hide show');
       },1000);
     } else if (contact.hasClass('show')) {
       contact.toggleClass('hide show');
+      contactButton.prop("disabled", false);
       setTimeout(() => {
         project.show();
         project.toggleClass('hide show');
       },1000);
     } else {
       project.toggleClass('hide show');
+      projectButton.prop("disabled", false);
       setTimeout(() => {
         project.toggleClass('hide show');
       },1000);
@@ -126,26 +142,31 @@ const fourthClose = $('#fourthClose');
 
   contactButton.on('click', () => {
     console.log("Contact Button was clicked")
+    contactButton.prop("disabled", true);
     if (header.hasClass('show')) {
       header.toggleClass('hide show');
+      homeButton.prop("disabled", false);
       setTimeout(() => {
         contact.show();
         contact.toggleClass('hide show');
       },1000);
     } else if (aboutMe.hasClass('show')) {
       aboutMe.toggleClass('hide show');
+      aboutButton.prop("disabled", false);
       setTimeout(() => {
         contact.show();
         contact.toggleClass('hide show');
       },1000);
     } else if (project.hasClass('show')) {
       project.toggleClass('hide show');
+      projectButton.prop("disabled", false);
       setTimeout(() => {
         contact.show();
         contact.toggleClass('hide show');
       },1000);
     } else {
       contact.toggleClass('hide show');
+      contactButton.prop("disabled", false);
       setTimeout(() => {
         contact.toggleClass('hide show');
       },1000);
