@@ -12,6 +12,7 @@
       <script src="./js/script.js"></script>
     </head>
     <body>
+      <!-- <a hidden href="" download="./files/DonaldHighe2021.pdf">Resume</a> -->
       <div id="background-fade">
       </div>
 
@@ -29,10 +30,12 @@
           <div id="about-me">
             <h4>background</h4>
             <p>After my recent move to New York, I thought I would take advantage of the fact, that I was now living in one of the best cities in the world for the technical field, by starting my career in Software Engineering. I had dabbled with various self-guided learning tools, such as Lynda.com and Stackskills, but I was not satisfied with the few simple examples and wanted more practical skills. I then found General Assembly. Not only was I taught the skills necessary to become a web developer, but I was able to produce several projects.</p>
-            <h4>about me </h4>
+            <h4>about me</h4>
             <p>I’m passionate about the creative process involved in programming and the investigative approach in testing computer software. My resilient nature allows me to handle unpredicted events well and generate alternative solutions quickly. I’m patient and collaborate well as a team member and leader.</p>
             <h4>skills</h4>
             <p>javascript | html | css | jquery | node | express | react | ruby | sql | mongodb | java | angularjs</p>
+            <h4>contact</h4>
+            <p>email: dhighe25@gmail.com </br> phone: 912-980-2870</p>
           </div>
         </div>
         <div id="project-container" class="hide">
@@ -126,16 +129,16 @@
         </div>
         <div id="contact-container" class="hide">
           <div id="contact">
-            <form method="post" action="contactForm.php">
+            <form id="contactForm">
                 your name:</br>
-                <input type="text" name="name"></br>
+                <input type="text" name="from_name"></br>
 
                 your email address:</br>
-                <input type="text" name="email"></br>
+                <input type="text" name="from_email"></br>
 
                 message:</br>
                 <textarea name="message" style="font-family:Maven Pro"></textarea></br>
-                <input id="submit" type="submit" value="submit"></br>
+                <input id="submit" type="submit" value="submit" ></br>
             </form>
           </div>
         </div>
@@ -153,8 +156,10 @@
             <button id="home-btn">home</button>
             <button id="about-btn">profile</button>
             <button id="project-btn">projects</button>
-            <button id="contact-btn">contact</button>
+            <!-- <button id="contact-btn">contact</button> -->
+            <button id="resume-btn">resume</button>
           </div>
         </div>
     </body>
   </html>
+

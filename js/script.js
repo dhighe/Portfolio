@@ -1,5 +1,3 @@
-console.log('Everything is fine')
-
 $(document).ready(function($) {
   $('#about-container').hide();
   $('#project-container').hide();
@@ -13,13 +11,26 @@ $(document).ready(function($) {
     $('#background-fade').toggleClass('active');
   },200);
 
-  var frmvalidator  = new Validator("contact_form");
-  frmvalidator.addValidation("name","req","Please provide your name");
-  frmvalidator.addValidation("email","req","Please provide your email");
-  frmvalidator.addValidation("email","email","Please enter a valid email address");
+  // var frmvalidator  = new Validator("contact_form");
+  // frmvalidator.addValidation("name","req","Please provide your name");
+  // frmvalidator.addValidation("email","req","Please provide your email");
+  // frmvalidator.addValidation("email","email","Please enter a valid email address");
 });
 
 $(() => {
+
+// emailjs.init(process.env.USER_ID);
+
+// let form  = document.getElementById('contactForm');
+
+// form.addEventListener('submit', (event) => {
+//   emailjs.sendForm(process.env.SERVICE_ID, process.env.TEMPLATE_ID, '#contactForm')
+//       .then(function(response) {
+//          console.log('SUCCESS!', response.status, response.text);
+//       }, function(error) {
+//          console.log('FAILED...', error);
+//       });
+// });
 
 const header = $('#header-container');
 const homeButton = $('#home-btn');
@@ -41,6 +52,7 @@ const firstClose = $('#firstClose');
 const secondClose = $('#secondClose');
 const thirdClose = $('#thirdClose');
 const fourthClose = $('#fourthClose');
+const resumeButton = $('#resume-btn');
 homeButton.prop("disabled", true);
 
 
@@ -172,6 +184,18 @@ homeButton.prop("disabled", true);
       },1000);
     }
   });
+
+  resumeButton.on('click', () => {
+    console.log("Resume Button was clicked");
+    let path= "./files/"; 
+    let save = document.createElement('a');  
+    save.href = path; 
+    save.download = "DonaldHighe2021.pdf"; 
+    save.target = '_blank'; 
+    document.body.appendChild(save);
+    save.click();
+    document.body.removeChild(save);
+    });
 
   firstProject.on('click', () => {
     console.log('Let\'s a look at this project')
