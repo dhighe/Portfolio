@@ -6,6 +6,7 @@ $(document).ready(function($) {
   $('#comic-modal').hide();
   $('#playlist-modal').hide();
   $('#fourth-modal').hide();
+  $('#resume-modal').hide();
   $('#modal-shadow').hide();
   setTimeout(function(){
     $('#background-fade').toggleClass('active');
@@ -53,6 +54,9 @@ const secondClose = $('#secondClose');
 const thirdClose = $('#thirdClose');
 const fourthClose = $('#fourthClose');
 const resumeButton = $('#resume-btn');
+const resumeModal = $('#resume-modal');
+const resumeClose = $('#resumeClose');
+const resumeFrame = $('#resumeFrame');
 homeButton.prop("disabled", true);
 
 
@@ -187,15 +191,24 @@ homeButton.prop("disabled", true);
 
   resumeButton.on('click', () => {
     console.log("Resume Button was clicked");
-    let path= "./files/"; 
-    let save = document.createElement('a');  
-    save.href = path; 
-    save.download = "DonaldHighe2021.pdf"; 
-    save.target = '_blank'; 
-    document.body.appendChild(save);
-    save.click();
-    document.body.removeChild(save);
+    resumeModal.show();
+      resumeFrame.append('<iframe style="height:100%; width:100%;" src="./files/DonaldHighe2021.pdf" type= "text/javascript"></iframe>')
+      $('#modal-shadow').show();
+      $('#modal-shadow').css('z-index', 0);
+      resumeModal.css('z-index', 1);
+      resumeModal.toggleClass('show hide');
     });
+
+  resumeClose.on('click', () => {
+    resumeFrame.remove();
+    $('#modal-shadow').hide();
+    $('#modal-shadow').css('z-index', -1);
+    setTimeout(function(){
+    resumeModal.css('z-index', -1);
+      },500);
+    resumeModal.toggleClass('show hide');
+    resumeFrame.remove();
+  })
 
   firstProject.on('click', () => {
     console.log('Let\'s a look at this project')
